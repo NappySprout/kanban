@@ -28,6 +28,7 @@
 		rounded="rounded-tl-container-token rounded-tr-container-token"
 		color="text-primary-500"
 	>
+	<div class="w-32 flex">
 		{#each $tabs as tab, i (tab)}
 			<div animate:flip={{ duration: 200 }} class="flex">
 				<div
@@ -41,6 +42,7 @@
 				<button class="btn btn-sm flex-col justify-start pl-0 -ml-2" on:click={remove(i)}>x</button>
 			</div>
 		{/each}
+	</div>
 	</TabGroup>
 
 	<svelte:fragment slot="trail">
