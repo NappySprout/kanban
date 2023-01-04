@@ -34,15 +34,15 @@
 			animate:flip={{ duration: 200 }}
 		>
 			{#if task.id != 'button'}
-				<div on:mousedown={() => ($isMoving = true)} on:mouseenter={taskFn(i)}>
+				<div on:pointerdown={() => ($isMoving = true)} on:pointerenter={taskFn(i)}>
 					<Card content={task.content} editCardFn={editModal(task.content, i, segmentIndex)} />
 				</div>
 			{:else}
 				<button
-					on:mouseenter={() => {
+					on:pointerenter={() => {
 						addToEnd = true;
 					}}
-					on:mouseleave={() => (addToEnd = false)}
+					on:pointerleave={() => (addToEnd = false)}
 					on:click={openModal(segmentIndex)}
 					class="btn btn-filled-primary btn-sm mt-2 transition transform hover:-translate-y-1 shadow-xl"
 				>

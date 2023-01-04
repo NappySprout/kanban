@@ -31,8 +31,8 @@
 		{#each $tabs as tab, i (tab)}
 			<div animate:flip={{ duration: 200 }} class="flex">
 				<div
-					on:mousedown={setDown(i)}
-					on:mouseup={setUp(i)}
+					on:pointerdown={setDown(i)}
+					on:pointerup={setUp(i)}
 					in:receive={{ key: tab }}
 					out:send={{ key: tab }}
 				>

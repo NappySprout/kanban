@@ -47,8 +47,8 @@
 	};
 </script>
 
-<svelte:window on:mouseup={end} />
-<div class="flex justify-evenly">
+<svelte:window on:pointerup={end} />
+<div class="flex lg:justify-evenly justify-start w-screen h-full overflow-scroll gap-2">
 	<!--{$isMoving} {$source} {$destination} {addToEnd} -->
 	{#if segments.length === 0}
 		<div
@@ -60,7 +60,7 @@
 		</div>
 	{/if}
 	{#each segments as segment, segmentIndex (segmentIndex)}
-		<div on:mouseenter={move(segmentIndex)}>
+		<div on:pointerenter={move(segmentIndex)}>
 			<Row title={segment.name} tasks={segment.tasks} {segmentIndex} bind:addToEnd />
 		</div>
 	{/each}
